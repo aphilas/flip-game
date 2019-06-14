@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+#board{
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 400px;
+  margin: 0 auto;
+}
+
+.cell {
+  --size: 80px;
+
+  height: var(--size);
+  /* width: var(--size); */
+
+  flex: 1 1 25%;
+
+  border: 1px solid white;
+  background-color: rgb(24, 17, 77);
+}
