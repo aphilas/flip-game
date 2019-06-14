@@ -56,6 +56,9 @@ class Cell {
 
       /* FIX this */
       matchedIndex = state.previous.id
+
+      state.matched += 1
+      if (state.matched === 8) console.log('game won!')
     }
     
     // mutate state
@@ -75,6 +78,7 @@ const symbols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 // state - store reference to previous cell
 const state = {
   previous: undefined,
+  matched: 0,
 }
 
 // global match index
@@ -96,7 +100,7 @@ const clickCell = event => {
   el.classList.add('active')
   setTimeout(_ => {
     el.classList.remove('active')
-  }, 500)
+  }, 1000)
   
   board[index].flip()
 
@@ -108,8 +112,6 @@ const clickCell = event => {
     prev.classList.add('matched')
     prev.removeEventListener('click', clickCell)
   }
-
-  console.log('flipped')
 }  
 
 const boardEl = document.getElementById('board')

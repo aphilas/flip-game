@@ -8,19 +8,23 @@
 
   width: 400px;
   margin: 0 auto;
+
+  --size: 80px;
+  --blue: rgb(34, 24, 105);
+  --dark-blue: rgb(24, 17, 77);
 }
 
 .cell {
-  --size: 80px;
 
   height: var(--size);
+
   /* vertical align text */
   line-height: var(--size);
-  /* width: var(--size); */
+
   flex: 1 1 25%;
 
   border: 1px solid white;
-  background-color: rgb(34, 24, 105);
+  background-color: var(--blue);
   cursor: pointer;
 
   color: white;
@@ -29,11 +33,15 @@
 }
 
 .cell:hover{
-  background-color: rgb(24, 17, 77);
+  background-color: var(--dark-blue);
 }
 
 .cell > .symbol {
   visibility: hidden;
+}
+
+.cell.active {
+  background-color: var(--dark-blue);
 }
 
 .cell.active > .symbol {
