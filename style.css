@@ -31,3 +31,15 @@
 .cell:hover{
   background-color: rgb(24, 17, 77);
 }
+
+.cell > .symbol {
+  visibility: hidden;
+}
+
+.cell.active > .symbol {
+  visibility: visible;
+}
+
+.cell.matched {
+  background-color: brown;
+}

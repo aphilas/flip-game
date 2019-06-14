@@ -83,22 +83,33 @@ const board = lettersShuffled.map((letter, index) => {
 
 /* DOM */
 
-const flipCell = event => {
+const clickCell = event => {
   const index = event.target.dataset.id
-
   board[index].flip()
+
+  event.target.classList.add('active')
+  setTimeout(_ => {
+    event.target.classList.remove('active')
+  }, 500)
+
+  
 
   console.log('flipped')
 }  
 
 const boardEl = document.getElementById('board')
 
+// global event
+let cellClick
+
 const cellEls = board.map((cell, index) => {
   let cellEl = document.createElement('div')
-  cellEl.innerHTML = cell.value
+  cellEl.innerHTML = `
+    <span class="symbol">${cell.value}</span>
+  `
   cellEl.className = 'cell'
   cellEl.dataset.id = index
-  cellEl.addEventListener('click', flipCell)
+  cellClick = cellEl.addEventListener('click', clickCell)
 
   return cellEl
 })
