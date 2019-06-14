@@ -44,3 +44,7 @@
   background-color: brown;
   cursor: auto;
 }
+
+.cell.matched > .symbol {
+  visibility: visible;
+}

@@ -53,6 +53,9 @@ class Cell {
         * mutates state
       */
       state.previous.matched = true
+
+      /* FIX this */
+      matchedIndex = state.previous.id
     }
     
     // mutate state
@@ -73,6 +76,9 @@ const symbols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 const state = {
   previous: undefined,
 }
+
+// global match index
+let matchedIndex
 
 // prepare board
 const lettersDoubled = [...symbols, ...symbols]
@@ -98,8 +104,7 @@ const clickCell = event => {
     el.classList.add('matched')
     el.removeEventListener('click', clickCell)
 
-    const prev = document.querySelector(`div[data-id="${state.previous.id}"]`)
-    console.log(prev)
+    const prev = document.querySelector(`div[data-id="${matchedIndex}"]`)
     prev.classList.add('matched')
     prev.removeEventListener('click', clickCell)
   }
