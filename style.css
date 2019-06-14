@@ -14,10 +14,20 @@
   --size: 80px;
 
   height: var(--size);
+  /* vertical align text */
+  line-height: var(--size);
   /* width: var(--size); */
-
   flex: 1 1 25%;
 
   border: 1px solid white;
+  background-color: rgb(34, 24, 105);
+  cursor: pointer;
+
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+.cell:hover{
   background-color: rgb(24, 17, 77);
 }
