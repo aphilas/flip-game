@@ -42,4 +42,5 @@
 
 .cell.matched {
   background-color: brown;
+  cursor: auto;
 }
